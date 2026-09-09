@@ -655,3 +655,97 @@
   .ww-hero-float { bottom:auto; top:1.5rem; right:1rem; }
   .ww-ms-img-primary { aspect-ratio:3/2; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   NETWORKS & RELATIONSHIPS — Enhanced page styles
+═══════════════════════════════════════════════════════════ */
+
+/* ── HERO ────────────────────────────────────────────────── */
+.nr-hero { position:relative; min-height:clamp(520px,78vh,860px); display:flex; align-items:center; overflow:hidden; }
+.nr-hero-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 40%; animation:au-hero-zoom 24s ease-in-out infinite alternate; }
+.nr-hero-overlay { position:absolute; inset:0; background:linear-gradient(135deg, oklch(0.15 0.04 164 / .96) 0%, oklch(0.18 0.05 164 / .82) 55%, oklch(0.22 0.05 164 / .5) 100%); }
+.nr-hero-content { position:relative; z-index:2; width:100%; padding-block:clamp(3rem,7vw,6rem); }
+.nr-hero-inner { display:grid; grid-template-columns:1fr 1fr; gap:clamp(3rem,6vw,7rem); align-items:center; }
+.nr-hero-h1 { font-family:var(--font-display); font-size:clamp(3.2rem,7vw,7rem); line-height:.93; color:var(--primary-foreground); margin:.7rem 0 1.2rem; }
+.nr-hero-h1 em { color:var(--gold); font-style:italic; display:block; }
+.nr-hero-sub { font-family:var(--font-display); font-size:clamp(.95rem,1.5vw,1.1rem); line-height:1.8; color:oklch(0.93 0.018 75 / .72); margin:0; max-width:32rem; }
+.nr-hero-logos { background:oklch(1 0 0 / .06); border:1px solid oklch(1 0 0 / .12); border-radius:var(--radius-lg); padding:1.5rem; backdrop-filter:blur(8px); }
+.nr-hero-logos-label { font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:oklch(0.93 0.018 75 / .5); display:block; margin-bottom:1rem; }
+.nr-hero-logos-strip { display:grid; grid-template-columns:repeat(2,1fr); gap:.75rem; }
+.nr-hero-logo-pill { background:white; border-radius:var(--radius-md); padding:.75rem 1rem; display:flex; align-items:center; justify-content:center; min-height:4rem; }
+.nr-hero-logo-pill img { max-width:100%; max-height:2.5rem; object-fit:contain; filter:none; }
+
+/* ── PHILOSOPHY ──────────────────────────────────────────── */
+.nr-philosophy { background:var(--card); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:clamp(3.5rem,7vw,7rem) 0; }
+.nr-philosophy-inner { display:grid; grid-template-columns:1fr 1fr; gap:clamp(3rem,5vw,6rem); align-items:center; }
+.nr-philosophy-text h2 { font-size:clamp(1.9rem,3.5vw,3.2rem); line-height:1.08; margin:.5rem 0 0; }
+.nr-philosophy-text h2 em { color:var(--primary); font-style:italic; }
+.nr-philosophy-body { font-family:var(--font-display); font-size:clamp(1rem,1.6vw,1.15rem); line-height:1.82; color:var(--muted-foreground); margin:0; }
+
+/* ── PRINCIPLES ──────────────────────────────────────────── */
+.nr-principles-section { background:var(--primary); color:var(--primary-foreground); padding:clamp(4rem,8vw,8rem) 0; }
+.nr-principles-section .section-heading h2 { color:var(--primary-foreground); }
+.nr-principles-section .eyebrow { color:var(--gold); }
+.nr-principles-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2rem; }
+.nr-principle { background:oklch(0.28 0.05 164); border:1px solid oklch(1 0 0 / .1); border-radius:var(--radius-lg); padding:2rem; display:flex; flex-direction:column; gap:.8rem; transition:border-color .3s,transform .3s; }
+.nr-principle:hover { border-color:var(--gold); transform:translateY(-3px); }
+.nr-principle-num { font-family:var(--font-display); font-size:3rem; font-weight:700; color:oklch(1 0 0 / .1); line-height:1; }
+.nr-principle h3 { font-size:1.2rem; margin:0; color:var(--primary-foreground); }
+.nr-principle p { font-size:.9rem; line-height:1.75; color:oklch(0.93 0.018 75 / .65); margin:0; }
+
+/* ── SECTION SUB ─────────────────────────────────────────── */
+.nr-section-sub { max-width:36rem; color:var(--muted-foreground); line-height:1.7; margin:0; font-size:.95rem; }
+
+/* ── PARTNER CARDS ───────────────────────────────────────── */
+.nr-partners { display:flex; flex-direction:column; gap:clamp(3rem,6vw,5rem); margin-top:2rem; }
+.nr-partner-card { display:grid; grid-template-columns:1fr 1.6fr; gap:clamp(2rem,4vw,5rem); align-items:start; background:var(--card); border:1px solid var(--border); border-radius:var(--radius-lg); padding:2.5rem; transition:border-color .3s,box-shadow .3s; }
+.nr-partner-card:hover { border-color:var(--gold); box-shadow:0 16px 48px oklch(0.68 0.096 75 / .08); }
+.nr-partner-card--flip { direction:rtl; }
+.nr-partner-card--flip > * { direction:ltr; }
+
+/* Logo panel */
+.nr-partner-logo-panel { display:flex; flex-direction:column; gap:1.2rem; }
+.nr-partner-logo-wrap { background:white; border-radius:var(--radius-md); padding:1.5rem; display:flex; align-items:center; justify-content:center; min-height:8rem; border:1px solid var(--border); }
+.nr-partner-logo-wrap img { max-width:100%; max-height:5rem; object-fit:contain; }
+.nr-partner-logo-meta { display:flex; align-items:center; gap:.6rem; }
+.nr-partner-icon-wrap { width:2rem; height:2rem; border-radius:var(--radius-sm); background:oklch(0.68 0.096 75 / .12); color:var(--gold); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.nr-partner-category { font-size:.7rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); }
+.nr-partner-tagline { font-family:var(--font-display); font-size:.92rem; line-height:1.6; color:var(--muted-foreground); font-style:italic; margin:0; border-left:3px solid var(--gold); padding-left:.85rem; }
+.nr-partner-link { display:inline-flex; align-items:center; gap:.35rem; font-size:.8rem; font-weight:600; color:var(--primary); text-decoration:none; transition:color .2s; margin-top:.25rem; }
+.nr-partner-link:hover { color:var(--gold); }
+
+/* Copy panel */
+.nr-partner-copy { display:flex; flex-direction:column; gap:1.3rem; }
+.nr-partner-copy h3 { font-size:clamp(1.5rem,2.8vw,2.2rem); margin:0; line-height:1.1; }
+.nr-partner-desc { font-family:var(--font-display); font-size:1rem; line-height:1.82; color:var(--muted-foreground); margin:0; }
+.nr-partner-impact { background:var(--background); border-radius:var(--radius-md); padding:1rem 1.2rem; border:1px solid var(--border); }
+.nr-partner-impact-label { font-size:.65rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin:0 0 .3rem; }
+.nr-partner-impact-text { font-size:.92rem; color:var(--foreground); font-weight:600; margin:0; }
+.nr-partner-why { border-left:3px solid var(--primary); padding-left:1rem; }
+.nr-partner-why-label { font-size:.65rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--primary); margin:0 0 .4rem; }
+.nr-partner-why-text { font-size:.9rem; line-height:1.72; color:var(--muted-foreground); margin:0; }
+
+/* ── BECOME A PARTNER ────────────────────────────────────── */
+.nr-become-section { background:var(--primary); color:var(--primary-foreground); padding:clamp(4rem,8vw,8rem) 0; }
+.nr-become-inner { display:grid; grid-template-columns:1fr auto; gap:5rem; align-items:center; }
+.nr-become-copy h2 { font-size:clamp(2rem,4vw,3.5rem); line-height:1.1; margin:.5rem 0 1.2rem; }
+.nr-become-copy h2 em { color:var(--gold); font-style:italic; }
+.nr-become-copy p { font-family:var(--font-display); font-size:1rem; line-height:1.8; color:oklch(0.93 0.018 75 / .72); margin:0; max-width:44rem; }
+.nr-become-actions { display:flex; flex-direction:column; gap:1rem; flex-shrink:0; align-items:flex-start; }
+.nr-become-secondary { font-size:.88rem; font-weight:600; color:oklch(0.93 0.018 75 / .6); text-decoration:none; transition:color .2s; }
+.nr-become-secondary:hover { color:var(--gold); }
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width:1024px) {
+  .nr-hero-inner { grid-template-columns:1fr; }
+  .nr-hero-logos { max-width:36rem; }
+  .nr-philosophy-inner { grid-template-columns:1fr; gap:2rem; }
+  .nr-principles-grid { grid-template-columns:1fr; }
+  .nr-partner-card { grid-template-columns:1fr; }
+  .nr-partner-card--flip { direction:ltr; }
+  .nr-become-inner { grid-template-columns:1fr; gap:2rem; }
+  .nr-become-actions { flex-direction:row; flex-wrap:wrap; }
+}
+@media (max-width:640px) {
+  .nr-hero-logos-strip { grid-template-columns:1fr 1fr; }
+}
