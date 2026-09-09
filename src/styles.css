@@ -476,3 +476,100 @@
   .au-calling-links { flex-direction:row; flex-wrap:wrap; }
   .au-stat-value { font-size:2rem; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   OUR VISION — Enhanced page styles
+═══════════════════════════════════════════════════════════ */
+
+/* ── HERO ────────────────────────────────────────────────── */
+.ov-hero { display:grid; grid-template-columns:1fr 1fr; min-height:clamp(540px,85vh,900px); }
+.ov-hero-copy { background:var(--primary); color:var(--primary-foreground); padding:clamp(3rem,8vw,8rem) clamp(2rem,5vw,5rem); display:flex; flex-direction:column; justify-content:space-between; }
+.ov-hero-h1 { font-family:var(--font-display); font-size:clamp(2.8rem,6vw,6.5rem); line-height:.96; margin:.6rem 0 0; }
+.ov-hero-h1 em { color:var(--gold); font-style:italic; display:block; }
+.ov-hero-meta { display:flex; flex-direction:column; align-items:flex-start; }
+.ov-hero-rule { width:3rem; height:2px; background:var(--gold); border-radius:99px; margin-bottom:1.4rem; }
+.ov-hero-sub { font-family:var(--font-display); font-size:clamp(.95rem,1.5vw,1.1rem); line-height:1.75; color:oklch(0.93 0.018 75 / .7); max-width:26rem; margin:0; }
+.ov-hero-image-wrap { position:relative; overflow:hidden; }
+.ov-hero-image { width:100%; height:100%; object-fit:cover; object-position:center 25%; animation:au-hero-zoom 20s ease-in-out infinite alternate; }
+.ov-hero-image-overlay { position:absolute; inset:0; background:linear-gradient(135deg, var(--primary) 0%, transparent 40%); opacity:.3; }
+.ov-float-tile { position:absolute; bottom:2.5rem; right:2rem; max-width:18rem; background:var(--gold); color:var(--primary); border-radius:var(--radius-lg); padding:1.3rem 1.5rem; box-shadow:0 20px 50px oklch(0.1 0.04 164 / .35); }
+.ov-float-ref { font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; margin:0 0 .45rem; opacity:.7; }
+.ov-float-quote { font-family:var(--font-display); font-size:.95rem; line-height:1.5; margin:0; font-style:italic; }
+
+/* ── MANIFESTO ───────────────────────────────────────────── */
+.ov-manifesto { background:var(--card); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:clamp(4rem,8vw,8rem) 0; overflow:hidden; }
+.ov-manifesto-inner { position:relative; }
+.ov-manifesto-quote { font-family:var(--font-display); font-size:clamp(1.4rem,3vw,2.6rem); line-height:1.4; color:var(--foreground); max-width:56rem; margin:1rem 0 0; font-style:italic; position:relative; z-index:2; }
+.ov-manifesto-quote em { color:var(--primary); font-style:italic; }
+.ov-manifesto-deco { position:absolute; right:-1rem; top:50%; transform:translateY(-50%); font-family:var(--font-display); font-size:clamp(6rem,15vw,14rem); font-weight:700; color:var(--border); opacity:.5; line-height:1; user-select:none; pointer-events:none; z-index:1; }
+
+/* ── WHO WE SERVE ────────────────────────────────────────── */
+.ov-serve-section { background:var(--primary); color:var(--primary-foreground); padding:clamp(4rem,8vw,8rem) 0; }
+.ov-serve-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(3rem,6vw,7rem); align-items:center; }
+.ov-serve-text .eyebrow { color:var(--gold); }
+.ov-serve-text h2 { font-size:clamp(2rem,4vw,3.8rem); line-height:1.05; margin:.5rem 0 1.5rem; color:var(--primary-foreground); }
+.ov-serve-text h2 em { color:var(--gold); font-style:italic; }
+.ov-serve-body { font-family:var(--font-display); font-size:1rem; line-height:1.8; color:oklch(0.93 0.018 75 / .7); margin:0 0 1rem; }
+.ov-serve-body strong { color:var(--primary-foreground); }
+.ov-serve-text .text-link { color:var(--gold); }
+.ov-serve-stats { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.ov-stat-block { background:oklch(0.28 0.05 164); border:1px solid oklch(1 0 0 / .1); border-radius:var(--radius-lg); padding:1.6rem; display:flex; flex-direction:column; gap:.4rem; }
+.ov-stat-block--gold { background:var(--gold); border-color:transparent; }
+.ov-stat-block--gold .ov-stat-n { color:var(--primary); }
+.ov-stat-block--gold .ov-stat-l { color:oklch(0.32 0.055 164 / .8); }
+.ov-stat-n { font-family:var(--font-display); font-size:clamp(2rem,4vw,3rem); font-weight:700; color:var(--primary-foreground); line-height:1; }
+.ov-stat-l { font-size:.8rem; line-height:1.5; color:oklch(0.93 0.018 75 / .6); }
+
+/* ── COMMITMENT CARDS ────────────────────────────────────── */
+.ov-section-sub { max-width:36rem; color:var(--muted-foreground); line-height:1.7; margin:0; font-size:.95rem; }
+.ov-commitments { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2rem; }
+.ov-commitment-card { position:relative; background:var(--card); border:1px solid var(--border); border-radius:var(--radius-lg); padding:2rem; overflow:hidden; display:flex; flex-direction:column; gap:1.1rem; transition:border-color .28s,box-shadow .28s,transform .28s; }
+.ov-commitment-card:hover { border-color:var(--gold); box-shadow:0 12px 44px oklch(0.68 0.096 75 / .1); transform:translateY(-4px); }
+.ov-commitment-watermark { position:absolute; top:-.8rem; right:-.5rem; font-family:var(--font-display); font-size:7rem; font-weight:700; color:var(--border); opacity:.6; line-height:1; user-select:none; pointer-events:none; }
+.ov-commitment-header { display:flex; align-items:flex-start; gap:1rem; position:relative; z-index:1; }
+.ov-commitment-icon { width:2.8rem; height:2.8rem; border-radius:var(--radius-md); background:oklch(0.68 0.096 75 / .12); color:var(--gold); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.ov-commitment-subtitle { font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin:0 0 .3rem; }
+.ov-commitment-header h3 { margin:0; font-size:1.3rem; }
+.ov-commitment-body { font-size:.95rem; line-height:1.75; color:var(--muted-foreground); margin:0; }
+.ov-commitment-detail { padding:1rem; background:var(--background); border-radius:var(--radius-md); border-left:3px solid var(--gold); }
+.ov-commitment-detail p { font-family:var(--font-display); font-size:.88rem; line-height:1.75; color:var(--muted-foreground); margin:0; }
+.ov-commitment-accent { padding-top:.8rem; border-top:1px solid var(--border); }
+.ov-commitment-accent span { font-size:.78rem; font-weight:600; letter-spacing:.05em; color:var(--gold); font-style:italic; }
+
+/* ── APPROACH TIMELINE ───────────────────────────────────── */
+.ov-approach-section { background:var(--primary); color:var(--primary-foreground); padding:clamp(4rem,8vw,8rem) 0; }
+.ov-approach-section .section-heading h2 { color:var(--primary-foreground); }
+.ov-approach-section .eyebrow { color:var(--gold); }
+.ov-approach-list { list-style:none; margin:2.5rem 0 0; padding:0; display:grid; grid-template-columns:repeat(5,1fr); gap:0; position:relative; }
+.ov-approach-step { display:flex; flex-direction:column; align-items:center; text-align:center; position:relative; }
+.ov-approach-num { width:3rem; height:3rem; border-radius:50%; background:var(--gold); color:var(--primary); display:flex; align-items:center; justify-content:center; font-size:.78rem; font-weight:700; letter-spacing:.08em; flex-shrink:0; position:relative; z-index:2; box-shadow:0 0 0 4px oklch(0.28 0.05 164); }
+.ov-approach-connector { position:absolute; top:1.5rem; left:calc(50% + 1.5rem); right:calc(-50% + 1.5rem); height:2px; background:oklch(1 0 0 / .12); z-index:1; }
+.ov-approach-step:last-child .ov-approach-connector { display:none; }
+.ov-approach-content { margin-top:1.2rem; padding:0 .5rem; }
+.ov-approach-content h4 { font-size:1rem; margin:0 0 .5rem; color:var(--primary-foreground); }
+.ov-approach-content p { font-size:.83rem; line-height:1.65; color:oklch(0.93 0.018 75 / .6); margin:0; }
+
+/* ── COMMISSION ──────────────────────────────────────────── */
+.ov-commission { background:var(--background); padding:clamp(5rem,10vw,10rem) 0; position:relative; overflow:hidden; }
+.ov-commission::before { content:"✝"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:clamp(14rem,30vw,28rem); color:var(--gold); opacity:.04; line-height:1; pointer-events:none; user-select:none; }
+.ov-commission-rule { width:2px; height:4rem; background:linear-gradient(to bottom,transparent,var(--gold),transparent); margin:0 auto 2rem; }
+.ov-commission-reference { font-size:.72rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin:0 0 1.5rem; }
+.ov-commission-text { font-family:var(--font-display); font-size:clamp(1.2rem,2.2vw,1.9rem); line-height:1.6; color:var(--foreground); font-style:italic; max-width:52rem; margin:0 auto 1.8rem; position:relative; z-index:2; }
+.ov-commission-cite { font-size:.8rem; font-weight:600; letter-spacing:.15em; text-transform:uppercase; color:var(--muted-foreground); font-style:normal; }
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width:1024px) {
+  .ov-hero { grid-template-columns:1fr; min-height:auto; }
+  .ov-hero-image-wrap { height:55vw; min-height:340px; }
+  .ov-float-tile { right:1rem; bottom:1rem; }
+  .ov-serve-grid { grid-template-columns:1fr; }
+  .ov-commitments { grid-template-columns:1fr; }
+  .ov-approach-list { grid-template-columns:1fr; gap:2rem; }
+  .ov-approach-connector { display:none; }
+  .ov-approach-step { flex-direction:row; align-items:flex-start; text-align:left; gap:1.2rem; }
+  .ov-approach-content { margin-top:0; padding:0; }
+}
+@media (max-width:768px) {
+  .ov-serve-stats { grid-template-columns:1fr; }
+  .ov-manifesto-deco { display:none; }
+}
