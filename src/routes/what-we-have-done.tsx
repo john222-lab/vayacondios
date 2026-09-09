@@ -3,8 +3,9 @@ import { Heart, ArrowRight, MapPin, Calendar } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { PageLayout } from "../components/PageLayout";
 import heroImage from "../assets/hero-community.jpg";
-import bike2015a from "../assets/mission-bike-2015.jpg";
-import bike2016a from "../assets/mission-bike-2016.jpg";
+import origBikeA from "../assets/orig-first-bike-a.png";
+import origBikeB from "../assets/orig-first-bike-b.png";
+import origBikeC from "../assets/orig-first-bike.png";
 import communityVisit from "../assets/community-visit.jpg";
 import gospelOutreach from "../assets/gospel-outreach.jpg";
 
@@ -59,20 +60,20 @@ const milestones = [
     era: "The beginning",
     title: "First Missionary Bike",
     location: "Cristiania, Peru",
-    body: "The first pastor we identified was Andreas Jimenez — married to an indigenous woman and sent by his church, Iglesia Bautista Prado Centro, to Cristiania as a missionary. We raised funds from Christian well-wishers and our church family and bought him a motorbike to enable his ministry across hard-to-reach terrain.",
+    body: "The first pastor we identified was Andreas Jimenez who is married to an indigenous and was sent by his church Iglesia Bautista Prado Centro to Cristiania to work as a missionary in this community. We raised some funds from Christian well wishers and our church and bought him a bike to help him with transport in 2015.",
     impact: "Unlocked access to remote communities previously unreachable on foot.",
-    images: [bike2015a, bike2016a],
+    images: [origBikeA, origBikeB] as const,
     accent: "Faith made tangible",
   },
   {
-    year: "2016",
-    era: "Growing in reach",
-    title: "Second Bike & Wider Outreach",
+    year: "2015",
+    era: "First year continued",
+    title: "Second Bike Gallery",
     location: "Peru",
-    body: "Encouraged by what God was doing, we continued to support our missionary partners. A second motorbike was funded, enabling further outreach into remote areas and allowing Pastor Andreas to cover more communities, disciple more people, and preach the gospel more widely.",
-    impact: "Doubled the geographical reach of the mission.",
-    images: [gospelOutreach, communityVisit],
-    accent: "Multiplication of ministry",
+    body: "Further images from the first bike purchase and community engagement — showing the real faces of the missionary work started by Pastor Andreas Jimenez in the indigenous community of Cristiania.",
+    impact: "Real people, real faith, real transformation.",
+    images: [origBikeC, communityVisit] as const,
+    accent: "Stepping out in faith",
   },
   {
     year: "Ongoing",
@@ -81,7 +82,7 @@ const milestones = [
     location: "Indigenous communities",
     body: "Our teams have made multiple visits to indigenous communities — sharing the gospel, distributing resources, building lasting relationships rooted in faith and service, and identifying new pastors and evangelists to raise up as disciples.",
     impact: "Multiple communities reached with the gospel across several years.",
-    images: [communityVisit, bike2015a],
+    images: [gospelOutreach, communityVisit] as const,
     accent: "The harvest is plentiful",
   },
 ] as const;
