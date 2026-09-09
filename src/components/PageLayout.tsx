@@ -1,6 +1,15 @@
 import { type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { Facebook, Heart, Menu, Youtube } from "lucide-react";
+import {
+  Facebook,
+  Heart,
+  Mail,
+  MapPin,
+  Menu,
+  Phone,
+  Twitter,
+  Youtube,
+} from "lucide-react";
 import logo from "../assets/vcd-logo.png";
 
 const navigation = [
@@ -8,6 +17,22 @@ const navigation = [
   ["Our Vision", "/our-vision"],
   ["What We Have Done", "/what-we-have-done"],
   ["Networks & Relationships", "/networks-relationships"],
+] as const;
+
+const footerPages = [
+  ["About Us", "/about-us"],
+  ["Our Vision", "/our-vision"],
+  ["What We Have Done", "/what-we-have-done"],
+  ["Networks & Relationships", "/networks-relationships"],
+  ["Join Us", "/join-us"],
+] as const;
+
+const footerQuickLinks = [
+  ["How It All Began", "/about-us"],
+  ["Stepping Out In Faith", "/our-vision"],
+  ["Our Partners", "/networks-relationships"],
+  ["Donate", "#donate"],
+  ["Contact", "/join-us"],
 ] as const;
 
 interface PageLayoutProps {
@@ -54,36 +79,133 @@ export function PageLayout({ children }: PageLayoutProps) {
       {/* ── Page content ────────────────────────────── */}
       <main>{children}</main>
 
-      {/* ── Footer ──────────────────────────────────── */}
-      <footer className="site-footer">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-[1.2fr_1fr_1fr] lg:px-8">
-          <div>
-            <img src={logo} alt="Vaya Con Dios" className="h-14 w-auto" />
-            <p className="mt-5 max-w-xs text-sm leading-6 text-footer-muted">
-              64 Woodrush Way<br />Romford<br />RM6 5BL<br />London UK
-            </p>
-          </div>
-          <div>
-            <h3>Contact Us</h3>
-            <a href="tel:+447932562569">+44 7932 562569</a>
-            <a href="mailto:info@vayacondios.org.uk">info@vayacondios.org.uk</a>
-          </div>
-          <div>
-            <h3>Connect With Us</h3>
-            <div className="flex gap-2">
-              <a className="social-link" href="#" aria-label="Facebook"><Facebook size={18} /></a>
-              <a className="social-link" href="#" aria-label="Twitter">X</a>
-              <a className="social-link" href="#" aria-label="YouTube"><Youtube size={19} /></a>
+      {/* ══════════════════════════════════════════════
+          ENHANCED FOOTER
+      ══════════════════════════════════════════════ */}
+      <footer className="ft-root" aria-label="Site footer">
+
+        {/* ── Pre-footer CTA strip ──────────────────── */}
+        <div className="ft-cta-strip">
+          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-5 py-10 sm:flex-row lg:px-8">
+            <div>
+              <p className="ft-cta-eyebrow">Go with God</p>
+              <p className="ft-cta-heading">
+                Join us in reaching the <em>lost</em> and the<br className="hidden sm:block" /> forgotten.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3 shrink-0">
+              <Link to="/join-us" className="button ft-btn-join">Join the mission</Link>
+              <a href="#" className="button ft-btn-donate"><Heart size={15} aria-hidden="true" />Donate</a>
             </div>
           </div>
         </div>
-        <div className="border-t border-footer-line">
-          <div className="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-6 text-xs text-footer-muted md:flex-row md:items-center md:justify-between lg:px-8">
-            <p>© 2024 Vaya Con Dios</p>
-            <p>UK Registered Charity 0000000 · Company Limited by Guarantee 0000000 Registered in England and Wales</p>
-            <div className="flex gap-4">
-              <a href="#">Terms and conditions</a>
-              <a href="#">Privacy and usage policy</a>
+
+        {/* ── Gradient divider ─────────────────────── */}
+        <div className="ft-divider" aria-hidden="true" />
+
+        {/* ── Main grid ────────────────────────────── */}
+        <div className="ft-main">
+          <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:px-8 lg:grid-cols-[1.5fr_1fr_1fr_1.4fr]">
+
+            {/* Col 1 – Brand ───────────────────────── */}
+            <div className="ft-col-brand">
+              <Link to="/" aria-label="Vaya Con Dios home">
+                <img src={logo} alt="Vaya Con Dios" className="ft-logo" />
+              </Link>
+              <p className="ft-tagline">
+                A Christian organisation born from a divine dream — called to reach the lost indigenous peoples
+                of the world with the gospel of Jesus Christ.
+              </p>
+
+              {/* Social icons */}
+              <div className="ft-social-row" aria-label="Social media links">
+                <a href="#" aria-label="Facebook" className="ft-social"><Facebook size={17} /></a>
+                <a href="#" aria-label="Twitter / X" className="ft-social">
+                  <Twitter size={17} />
+                </a>
+                <a href="#" aria-label="YouTube" className="ft-social"><Youtube size={17} /></a>
+              </div>
+            </div>
+
+            {/* Col 2 – Pages ──────────────────────── */}
+            <nav aria-label="Footer pages navigation">
+              <p className="ft-col-title">Pages</p>
+              <ul className="ft-link-list">
+                {footerPages.map(([label, href]) => (
+                  <li key={label}>
+                    <Link to={href} className="ft-link">{label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            {/* Col 3 – Quick links ─────────────────── */}
+            <nav aria-label="Footer quick links">
+              <p className="ft-col-title">Quick links</p>
+              <ul className="ft-link-list">
+                {footerQuickLinks.map(([label, href]) => (
+                  <li key={label}>
+                    <a href={href} className="ft-link">{label}</a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            {/* Col 4 – Contact ─────────────────────── */}
+            <div>
+              <p className="ft-col-title">Get in touch</p>
+              <ul className="ft-contact-list">
+                <li>
+                  <span className="ft-contact-icon"><MapPin size={14} /></span>
+                  <address className="ft-contact-text not-italic">
+                    64 Woodrush Way, Romford<br />RM6 5BL, London, UK
+                  </address>
+                </li>
+                <li>
+                  <span className="ft-contact-icon"><Phone size={14} /></span>
+                  <a href="tel:+447932562569" className="ft-contact-text ft-link">+44 7932 562569</a>
+                </li>
+                <li>
+                  <span className="ft-contact-icon"><Mail size={14} /></span>
+                  <a href="mailto:info@vayacondios.org.uk" className="ft-contact-text ft-link">
+                    info@vayacondios.org.uk
+                  </a>
+                </li>
+              </ul>
+
+              {/* Newsletter mini-form */}
+              <div className="ft-newsletter">
+                <p className="ft-newsletter-label">Prayer &amp; news updates</p>
+                <form
+                  className="ft-newsletter-form"
+                  onSubmit={(e) => e.preventDefault()}
+                >
+                  <input
+                    type="email"
+                    placeholder="Your email address"
+                    aria-label="Email for newsletter"
+                    required
+                  />
+                  <button type="submit" aria-label="Subscribe">
+                    <Mail size={15} />
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ── Bottom bar ───────────────────────────── */}
+        <div className="ft-bottom">
+          <div className="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-5 lg:px-8 lg:flex-row lg:items-center lg:justify-between">
+            <p className="ft-bottom-text">© {new Date().getFullYear()} Vaya Con Dios. All rights reserved.</p>
+            <p className="ft-bottom-text ft-charity-reg">
+              UK Registered Charity No. 0000000 · Company Limited by Guarantee 0000000 · Registered in England &amp; Wales
+            </p>
+            <div className="flex flex-wrap gap-5">
+              <a href="#" className="ft-bottom-link">Terms &amp; conditions</a>
+              <a href="#" className="ft-bottom-link">Privacy policy</a>
+              <a href="#" className="ft-bottom-link">Cookie settings</a>
             </div>
           </div>
         </div>
