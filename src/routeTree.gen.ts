@@ -10,6 +10,11 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutUsRouteImport } from './routes/about-us'
+import { Route as OurVisionRouteImport } from './routes/our-vision'
+import { Route as WhatWeHaveDoneRouteImport } from './routes/what-we-have-done'
+import { Route as NetworksRelationshipsRouteImport } from './routes/networks-relationships'
+import { Route as JoinUsRouteImport } from './routes/join-us'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -17,26 +22,76 @@ const IndexRoute = IndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 
+const AboutUsRoute = AboutUsRouteImport.update({
+  id: '/about-us',
+  path: '/about-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
+const OurVisionRoute = OurVisionRouteImport.update({
+  id: '/our-vision',
+  path: '/our-vision',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
+const WhatWeHaveDoneRoute = WhatWeHaveDoneRouteImport.update({
+  id: '/what-we-have-done',
+  path: '/what-we-have-done',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
+const NetworksRelationshipsRoute = NetworksRelationshipsRouteImport.update({
+  id: '/networks-relationships',
+  path: '/networks-relationships',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
+const JoinUsRoute = JoinUsRouteImport.update({
+  id: '/join-us',
+  path: '/join-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
+  '/our-vision': typeof OurVisionRoute
+  '/what-we-have-done': typeof WhatWeHaveDoneRoute
+  '/networks-relationships': typeof NetworksRelationshipsRoute
+  '/join-us': typeof JoinUsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
+  '/our-vision': typeof OurVisionRoute
+  '/what-we-have-done': typeof WhatWeHaveDoneRoute
+  '/networks-relationships': typeof NetworksRelationshipsRoute
+  '/join-us': typeof JoinUsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
+  '/our-vision': typeof OurVisionRoute
+  '/what-we-have-done': typeof WhatWeHaveDoneRoute
+  '/networks-relationships': typeof NetworksRelationshipsRoute
+  '/join-us': typeof JoinUsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/about-us' | '/our-vision' | '/what-we-have-done' | '/networks-relationships' | '/join-us'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/about-us' | '/our-vision' | '/what-we-have-done' | '/networks-relationships' | '/join-us'
+  id: '__root__' | '/' | '/about-us' | '/our-vision' | '/what-we-have-done' | '/networks-relationships' | '/join-us'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutUsRoute: typeof AboutUsRoute
+  OurVisionRoute: typeof OurVisionRoute
+  WhatWeHaveDoneRoute: typeof WhatWeHaveDoneRoute
+  NetworksRelationshipsRoute: typeof NetworksRelationshipsRoute
+  JoinUsRoute: typeof JoinUsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +103,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about-us': {
+      id: '/about-us'
+      path: '/about-us'
+      fullPath: '/about-us'
+      preLoaderRoute: typeof AboutUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/our-vision': {
+      id: '/our-vision'
+      path: '/our-vision'
+      fullPath: '/our-vision'
+      preLoaderRoute: typeof OurVisionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/what-we-have-done': {
+      id: '/what-we-have-done'
+      path: '/what-we-have-done'
+      fullPath: '/what-we-have-done'
+      preLoaderRoute: typeof WhatWeHaveDoneRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/networks-relationships': {
+      id: '/networks-relationships'
+      path: '/networks-relationships'
+      fullPath: '/networks-relationships'
+      preLoaderRoute: typeof NetworksRelationshipsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/join-us': {
+      id: '/join-us'
+      path: '/join-us'
+      fullPath: '/join-us'
+      preLoaderRoute: typeof JoinUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutUsRoute: AboutUsRoute,
+  OurVisionRoute: OurVisionRoute,
+  WhatWeHaveDoneRoute: WhatWeHaveDoneRoute,
+  NetworksRelationshipsRoute: NetworksRelationshipsRoute,
+  JoinUsRoute: JoinUsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
